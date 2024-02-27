@@ -38,6 +38,7 @@ public class UserController {
             UserEntity newUser = UserEntity.builder()
                     .username(dto.getUsername())
                     .password(passwordEncoder.encode(dto.getPassword()))
+                    .authorities("ROLE_INERT")
                     .build();
 
             userRepository.save(newUser);
